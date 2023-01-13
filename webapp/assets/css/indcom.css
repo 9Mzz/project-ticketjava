@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+#map {width: 300px;}
+#posterArea, #calArea, #mapArea {padding: 0px;}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:active {text-decoration:none;}
+a:hover {text-decoration:none;}
+
+.pageMenu {
+	font-size: 32px;
+	font-weight: bold;
+	padding: 0px;
+	margin: 0px 0px 10px 0px;
+}
+
+.section {
+	box-shadow: 0px 2px rgb(219, 219, 219);
+	padding-bottom: 15px;
+	margin: 50px 0px 23px 0px;
+}
+
+.formSection {
+	border-bottom: 1.5px #f0f0f0 solid;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.formMargin {
+	margin-bottom: 10px;	
+}
+
+
+.position-left {
+	float: left;
+	height: 34px;
+}
+
+.adminform{
+	height: 34px;	
+}
+
+.adBtn {
+	margin-bottom: 5px;
+}
+
+.position {
+	float: right;
+	width: 120px;
+	margin: 0px 0px 10px 0px;
+}
+
+
+.form-text {
+	font-size: 15px;
+	text-align: left;
+	padding: 6px 15px;
+}
+
+.cateMenu {
+	font-size: 25px;
+	font-weight: bold;
+	margin: 0px 0px 10px 0px;
+}
+
+.b-cateMenu {
+	font-size: 20px;
+	font-weight: bolder;
+	margin: 0px 0px 15px 0px;	
+	
+}
+
+
+.bgc {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	background-color: #e9e9e9;
+	margin: 0px 0px 15px 0px;
+}
+
+.np {
+	padding: 0px;
+}
+
+
+.nm {
+	margin: 0px;
+}
+
+.fb {
+	font-weight: bold;
+}
+
+.paging {
+	text-align: center;
+}
+
+#bc {
+	background-color: #f4f4f4;
+}

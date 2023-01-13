@@ -1,0 +1,583 @@
+@charset "UTF-8";
+
+/**********************************************/
+/* info */
+/**********************************************/
+
+body {
+	position: relative;
+}
+
+.line {
+	margin: 5px 30px;
+	text-align: center;
+	width: 360px;
+	height: 5px;
+	border-bottom: 2px solid #d3d3d3;
+}
+
+
+.fixwidth {
+	width: 1000px;
+	padding: 0px;
+}
+
+
+.point-color {
+	font-weight: bold;
+	color: #6697f2;
+}
+
+#back_to_top{
+	position:fixed;
+	top:50%;
+	right:0;
+	margin-top:-22px;
+	background-position:-270px -123px;
+	width:44px;
+	height:44px;
+	z-index:1000;
+	text-align:center;
+	padding:3px 10px;
+	color:white;
+	background-color:#6697f2;
+}
+
+#mainPoster, #cal {
+	width: 100%;
+	height: auto;
+}
+
+#rezBtn {
+	margin-top: 20px;
+	height: 58px;
+	font-size: 21px;
+	font-weight: bolder;
+}
+#infoPic, #mapInfo {
+	padding: 0px 0px 20px 0px;
+}
+
+#infoDetail img{
+	width: 735px;
+}
+
+.infoTable {
+	font-size: 16px;
+	text-align: left;
+	padding: 0px;
+	margin: 0px 0px 0px 30px;
+}
+
+.infoTable tr {
+	height: 36px;
+}
+
+.infoTable #priceTable {
+	height: 25px;
+}
+
+.infoTable tr>th {
+	font-size: 18px;
+	vertical-align: top;
+	width: 110px;
+}
+
+.infoTable tr>td {
+	vertical-align: top;
+	height: 25px;
+	width: 200px;
+	padding: 1px 0px 0px 0px;
+}
+
+#priceTable tr {
+	height: 27px;
+	font-size: 18px;
+	text-align: left;
+} 
+
+#priceTable tr>td {
+	text-transform: uppercase;
+	font-size: 16px;
+	height: 25px;
+	width: 70px;
+}
+
+#saleTable tr {
+	height: 27px;
+	font-size: 16px;
+	text-align: left;	
+}
+
+#dcname {
+	width: 150px;
+}
+
+#dcrate {
+	width: 50px;
+}
+
+.nav-border {
+	margin-top: 23px;
+	padding: 20px 0px 20px 0px;
+	border-top: 2px solid #d3d3d3;
+	border-bottom: 2px solid #d3d3d3;
+}
+
+.review-qna {
+	font-size: 14px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 0px;
+}
+
+.review-qna tbody>tr>td {
+	vertical-align: middle;
+}
+
+.disabled {
+	background-color: #e9e9e9;
+	margin: 0px 0px 15px 0px;
+}
+
+
+.textarea-size {
+	height: 200px;
+	margin: 20px 0px 0px 0px;
+}
+.review-qna th{
+	font-size: 16px;
+	text-align: center;
+}
+
+.imgArea {
+	width: 237px;
+	height: 318px;
+}
+
+
+.imgArea .poster {
+	width: 237px;
+	height: 318px;
+}
+
+
+.rank-list .rank-poster {
+	width: 140px;
+	height: 180px;
+}
+
+.imgArea .region-poster {
+	width: 207px;
+}
+
+.rankingTable {
+	margin-bottom: 20px;
+}
+
+.rankingTable th {
+	font-size: 25px;
+	text-align: left;
+	vertical-align: top;
+	width: 120px;
+}
+
+.rankingTable .nextBtn {
+	width: 50px;
+}
+
+
+.floatLeft {
+	width: 300px;
+	float: left;
+}
+
+.floatRight {
+	margin: 0px;
+	float: right;
+}
+
+.regionList {
+	list-style: none;
+	float: left;
+	font-size: 15px;
+	vertical-align: bottom;
+	padding: 12px 0px 0px 0px;
+	margin: 0px 0px 0px 15px;
+}
+
+.regionList-sel {
+	list-style: none;
+	float: left;
+	font-size: 19px;
+	color: black;
+	font-weight: bold;
+	vertical-align: bottom;
+	padding: 8px 0px 0px 0px;
+	margin: 0px 0px 0px 15px;
+}
+
+
+.productInfo {
+	padding: 10px 0px 0px 15px;
+	background-color: white; 
+	width: 237px;
+	height: 101.5px;
+}
+
+.productInfo p{
+	font-size: 14px;
+}
+
+.productInfo p.content{
+	color:#767676;
+}
+
+.rank-list p {
+	color:#767676;	
+}
+
+.rank-list .title {
+	color: black;	
+}
+.productInfo .title, .theater-info .title {
+	font-size: 16px;
+	font-weight: bolder;
+	margin-bottom: 7px;
+	
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;	
+}
+
+.list-width {
+	width: 237px;
+	height: 419.5px;
+	margin: 0px 17px 17px 0px;
+}
+
+.list-width .sports {
+	height: 270px;
+}
+
+.scroll {
+	font-size: 17px;
+	font-weight: bold;
+	padding: 0px 20px 0px 0px;
+}
+
+.spo{
+	width: 237px;
+	height: 260px;
+	margin-bottom: 5px;	
+}
+.nav>li>a {
+  	position: relative;
+  	display: block;
+  	padding: 5px 0px;
+}
+
+.rank-list div {
+	width: 140px;
+	margin: 0px 15px;
+}
+
+.btnArea, .btnSize {
+	width: 20px;
+	height: 40px;
+}
+.lastbtn {
+	padding-left: 10px;
+}
+
+.pd {
+	padding: 17px 17px 0px 25px;
+}
+
+.list-bgc {
+	box-shadow: 0px 2px rgba(0, 0, 0, 0.1);
+	background-color: #e9e9e9;
+	padding: 20px 15px 15px 15px;
+	margin: 0px 0px 15px 0px;
+}
+
+.logoArea div {
+	width: 176px;
+	height: 70px;
+}
+
+.logoArea {
+	width: 176px;
+	height: 70px;
+	margin: 0px 17px 17px 0px;
+}
+
+.theater-logo {
+	width: 176px;
+	height: 70px;
+	margin: 0px 17px 17px 0px;
+	box-shadow: 0px 2px 5px grey;
+}
+
+.last-logo {
+	width: 176px;
+	height: 70px;
+	margin: 0px 0px 17px 0px;
+}
+
+#theater-map {
+	width: 485px;
+}
+
+#logo {
+	width: 165px;
+	height: 156px;
+}
+
+.div-border {
+	font-size: 14px;
+	background-color: #f6f6f6;
+	height: 160px;
+	border: 2px solid #d3d3d3;
+	padding: 0px;
+}
+
+.theater-info {
+	background-color: #e9e9e9;
+	padding: 20px;
+	height: 156px;
+}
+
+.avail-product {
+	width: 186px;
+	height: 352px;
+	margin: 0px 17px 15px 0px;
+}
+
+.avail-poster, .avail-posterArea {
+	width: 186px;
+	height: 250px;
+}
+
+.spo-width {
+	width: 237px;
+	height: 370.5px;
+	margin: 0px 17px 17px 0px;
+}
+
+.avp {
+	width: 186px;
+	height: 100px;
+    white-space: nowarp; 
+    text-overflow: ellipsis; 
+    overflow: hidden;
+}
+
+.last {
+	margin: 0px 0px 0px 1px;
+}
+
+.poster-small-area {
+	margin: 20px 10px;
+	width: 145px;
+	height: 160px;
+}
+
+.poster-small {
+	width: 145px;
+	height: 160px;
+}
+
+.information {
+	font-size: 18px;
+	text-align: left;
+	height: 160px;
+	padding: 20px 10px 20px 25px;		
+}
+
+.information .title {
+	font-size: 21px;
+	font-weight: bolder;
+	margin: 0px 0px 78px 0px;
+}
+
+.sportsposter {
+	width: 237px;
+	height: 260px;
+}
+
+
+.btn-area {
+	width: 200px;
+	height: 200px;
+}
+
+.btn-position {
+	width: 150px;
+	height: 35px;
+	margin-left: 70px;
+	margin-top: 80px;
+}
+
+.star {
+   	position: relative;
+   	font-size: 2rem;
+   	color: #dedede;
+}
+  
+.star input {
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+  	left: 0;
+  	opacity: 0;
+  	cursor: pointer;
+}
+  
+.star span {
+  	width: 0;
+  	position: absolute; 
+  	left: 0;
+  	color: gold;
+ 	overflow: hidden;
+  	pointer-events: none;
+}
+
+/* 평점 입력용 골드스타 */
+.star-rating {
+	display: flex;
+	flex-direction: row-reverse;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+	justify-content: space-around;
+	padding: 0 0.2em;
+	text-align: center;
+	width: 5em;
+}
+
+.left-margin {
+	margin-left: 17px;
+}
+
+.star-rating input {
+	display: none;
+}
+
+.star-rating label {
+	-webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #2b2a29;
+	cursor: pointer;
+}
+
+.star-rating :checked ~ label {
+	-webkit-text-fill-color: gold;
+}
+
+.star-rating label:hover, .star-rating label:hover ~ label {
+	-webkit-text-fill-color: #fff58c;
+}
+
+
+#starb {
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: #2b2a29;
+}
+
+.star-margin {
+	margin-left: 20px;
+}
+
+
+.tag {
+	font-size:17px;
+	font-weight: bolder;
+	margin-bottom: 5px;	
+}
+
+.notice {
+	font-size: 16px;
+	color: red;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.notice-black {
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+
+.title {
+	overflow:hidden;
+	white-space : nowrap;
+	text-overflow: ellipsis;
+}
+
+.flag {
+
+	width: 29px;
+    height: 33px;
+    background: url(//ticketimage.interpark.com/TicketImage/2016/20160308_ranking/main/img/flag.png) 0 -33px no-repeat;
+    position: absolute;
+    top: 0;
+    left: 14.5;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+
+}
+
+.flagtop {
+
+	width: 29px;
+    height: 33px;
+    background: url(//ticketimage.interpark.com/TicketImage/2016/20160308_ranking/main/img/flag.png) 0 -33px no-repeat;
+    position: absolute;
+    top: 0;
+    left: 14.5;
+    line-height: 25px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+	background-position: 0 0;
+}
+
+
+#map {
+	width: 500px;
+	height: 400px;
+}
+
+.right-np {
+	padding-right: 0px;	
+}
+
+.add-margin {
+	margin-bottom: 25px;
+}
+
+#myCarousel, #myCarousel img {
+	width: 583.333px;
+	height: 420px;
+}
+
+.table {
+	margin-bottom: 2.1px;
+}
+
+#bc {
+	background-color: #f4f4f4;
+}
+
+.region_nav {
+	height: 46.9px;
+}
+
+.boxShadow{
+	height:5px;
+	background: linear-gradient(to bottom, #d7d7d7, #eee 60% ,#f4f4f4);
+}

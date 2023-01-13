@@ -1,0 +1,490 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.zp {
+	padding: 0px !important;
+}
+
+.text-center {
+	text-align:center;
+}
+
+
+/* 메인 비디오 제어 */
+.productVideo {
+	margin: 0px 0px 100px 0px;
+}
+
+.mainVideo {
+	display: flex; justify-content: center; align-items: center; width: 100%; height: 770px; background: #F7F8FA; position: relative;
+}
+
+.mainVideo img {
+	width: 100%; height: 770px; object-fit: cover; position: absolute; top: 0; left: 0;
+}
+
+.mainVideo video{
+	display: flex; object-fit: cover; width: 100%; height: 770px; z-index: 10	
+}
+
+
+/* 메인 비디오 코멘트 제어 */
+.mainVideoOverlay {
+	display: flex; flex-direction: column; align-self: center; position: absolute; top: 434px; left: 0; right: 0; margin: 0px auto; width: 1440px; z-index: 20;
+}
+
+.mainVideoComment {
+	min-width: 1440px; margin-left: 220px;
+}
+
+.mainVideoComment h1 {	
+	display: flex; flex-direction: column; align-self: flex-start; font-weight: 600; letter-spacing: 0.2px; font-size: 67px; line-height: 87px; color: white;
+}
+
+.mainVideoButton {
+	display: flex; cursor: pointer; align-items: center; justify-content: center; width: 190px; height: 70px; margin-top: 60px; margin-left: 220px; border-radius: 5px; background: #6A92FE;
+}
+
+.mainVideoButton p {
+	font-weight: 600; letter-spacing: -0.2px; font-size: 21px; line-height: 48px; color: #FFFFFF;
+}
+
+.mainVideoButton p>a {
+	color:white; text-decoration:none;
+}
+
+
+/*  메인페이지 공연 갤러리 위치 제어 */
+
+
+/* 공연 갤러리 리스트 타이틀 */
+.product div>div>div h3 {
+	font-size : 40px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.product div>div>div p {
+	font-size : 20px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+
+.section-padding {
+	padding: 100px 0px;
+}
+
+.banner h1 {
+	font-size: 30px;
+}
+.section-title p {
+	width: 100%;
+}
+.section-title h3 {
+	margin-bottom: 12px;
+	font-size: 25px;
+}
+.section-padding {
+	padding: 60px 0px;
+}
+.section-title {
+	padding-bottom: 40px;
+}
+.product .filtering {
+	border:none;
+}
+.product .filtering .active {
+	border-radius: 0px;
+}
+.product .filtering button {
+	font-size: 10px;
+	padding: 10px 15px;
+}
+.banner-overlay {
+	padding: 150px 0px 100px;
+}
+
+
+/*  메인페이지 공연 갤러리 제어 */
+.productGallery {
+	height:100%;
+	
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-decoration: none !important;
+	list-style: none !important;
+	outline: none !important;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+.product .filtering {
+	border-radius: 28px;
+	margin: 0 auto;
+	border: 1px dotted #e1e1e1;
+}
+.product .filtering button {
+	position: relative;
+	top: -1px;
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px 30px;
+	letter-spacing: 2px;
+	color: #777;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background: none;
+	border: 0;
+}
+.product .filtering .active {
+	background-color: #ab2f52;
+	color: #fff;
+	border-radius: 28px;
+	-webkit-box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 10px 30px -4px rgba(0, 0, 0, 0.2);
+}
+.product .gallery {
+	padding: 0;
+	overflow: hidden;
+	overflow: hidden !important;
+	position: relative;
+}
+.product .gallery .item-img {
+	position: relative;
+	overflow: hidden;
+}
+.product .gallery .item-img a {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.product .gallery .item-img .part-img {
+	position: relative;
+}
+.product .gallery .item-img .part-img img {
+	width: 100%;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.product .gallery .item-img .part-img .overlay-img {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.product .gallery .item-img .part-img .overlay-img:after {
+	content: '';
+	position: absolute;
+	left: -100%;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-transition: all 150ms ease-in-out 200ms;
+	transition: all 150ms ease-in-out 200ms;
+}
+.product .gallery .item-img .part-img .overlay-img:before {
+	content: '';
+	position: absolute;
+	right: -100%;
+	bottom: 0;
+	width: 100%;
+	height: 50%;
+	background: rgba(0, 0, 0, 0.8);
+	-webkit-transition: all 150ms ease-in-out 200ms;
+	transition: all 150ms ease-in-out 200ms;
+}
+.product .gallery .item-img .part-img .overlay-img a {
+	width: 100%;
+	height: 100%;
+}
+.product .gallery .item-img .part-img .overlay-img h4 {
+	color: transparent;
+	overflow: hidden;
+	position: absolute;
+	top: 54px;
+	right: 25px;
+	z-index: 2;
+	font-size: 18px;
+	-webkit-transition: color 150ms ease-in-out 200ms;
+	transition: color 150ms ease-in-out 200ms;
+	text-align: center;
+	padding: 0 10px;
+}
+.product .gallery .item-img .part-img .overlay-img h4:before {
+	content: '';
+	background: #fff;
+	bottom: 0;
+	position: absolute;
+	right: 100%;
+	top: 0;
+	width: 100%;
+	-webkit-transition: right 600ms ease-in-out 0s;
+	transition: right 600ms ease-in-out 0s;
+}
+.product .gallery .item-img .part-img .overlay-img h6 {
+	color: transparent;
+	overflow: hidden;
+	position: absolute;
+	top: 30px;
+	right: 25px;
+	z-index: 2;
+	font-size: 18px;
+	-webkit-transition: color 150ms ease-in-out 200ms;
+	transition: color 150ms ease-in-out 200ms;
+	text-align: center;
+	padding: 0 10px;
+}
+.product .gallery .item-img .part-img .overlay-img h6::before {
+	content: '';
+	background: #fff;
+	bottom: 0;
+	right: auto;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 100%;
+	-webkit-transition: left 600ms ease-in-out 0s;
+	transition: left 600ms ease-in-out 0s;
+}
+.product .gallery .item-img:hover img {
+	-webkit-transform: scale(1.04);
+	transform: scale(1.04);
+}
+.product .gallery .item-img:hover .overlay-img:after {
+	left: 0;
+	-webkit-transition: all .8s;
+	transition: all .8s;
+	opacity: 1;
+}
+.product .gallery .item-img:hover .overlay-img:before {
+	right: 0;
+	width: 100%;
+	height: 50%;
+	-webkit-transition: all .8s;
+	transition: all .8s;
+	opacity: 1;
+}
+.product .gallery .item-img:hover .overlay-img h4 {
+	color: white;
+}
+.product .gallery .item-img:hover .overlay-img h4:before {
+	right: -100%;
+}
+.product .gallery .item-img:hover .overlay-img h6 {
+	color: white;
+}
+.product .gallery .item-img:hover .overlay-img h6:before {
+	left: -100%;
+}
+.portfolio-style2 .filtering {
+	border: 1px solid #e1e1e1;
+}
+.portfolio-style2 .filtering .active {
+	background-color: #1c1c1c;
+
+}
+
+
+
+.mb-30 {
+	margin-bottom: 30px !important;
+}
+.mb-50 {
+	margin-bottom: 50px !important;
+}
+.mb-100 {
+	margin-bottom: 100px !important;
+}
+.mt-50 {
+	margin-top: 50px !important;
+}
+.mt-100 {
+	margin-bottom: 100px !important;
+}
+.pd-lt-10 {
+	padding-left:10px;
+}
+
+
+.section-padding {
+	padding: 100px 0px;
+}
+.section-title {
+	padding-bottom: 80px;
+}
+.section-title h3 {
+	color: #ab2f52;
+	text-transform: uppercase;
+	font-weight: 300;
+	margin-bottom: 22px;
+}
+.section-title p {
+	width: 60%;
+	margin: 15px auto 20px;
+}
+.section-title-line {
+	background: #ececec;
+	content: "";
+	height: 1px;
+	position: absolute;
+	left: calc(50% - 87px);
+	width: 175px;
+}
+
+.section-title-line:after {
+	background: #6697f2;
+	bottom: -1px;
+	content: "";
+	height: 2px;
+	left: calc(50% - 22px);
+	position: absolute;
+	width: 45px;
+}
+
+
+/* 메인페이지 카운터 기능 제어 */
+.site-section {
+   padding: 100px 0 140px;
+}
+
+.section-map-feature {
+    padding-top: 250px;
+    background: #071021 url(../img/map.png) no-repeat top center / cover; 
+}
+
+.section-map-feature h2 {
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.section-map-feature h2,
+.section-map-feature p {
+    color: #fff;
+}
+
+.section-map-feature .btn {
+    margin: 80px 0 215px;
+}
+
+
+/* 메인페이지 카운터 메시지 제어 */
+.numbering {
+	margin: 40px 0px 40px 0px;
+}
+
+.counter {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+/* 카운터 텍스트 - 지금까지 티켓자바를 만난 사람들 */
+.counter-item h3 {
+    margin: 0;
+    font-size: 34px;
+    color: #ffffff ;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 카운터 텍스트 - 티켓자바로 본 작품의 누적 시간 */
+.counter-item h4 {
+    margin: 0;
+    font-size: 45px;
+    color: #ffffff;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+.counter-item  p {
+	margin: 0px auto;
+	padding: 0px auto;
+	font-size:70px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* 티켓자바 서비스 소개 */
+.ticketjavaAbout {
+	margin:50px 0px 0px 0px;
+}
+
+.ticketjavaAbout div {
+	margin:50px 10px 50px 0px;
+	text-align:center;
+	font-size:15px;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 티켓자바 파란표 블루티켓 넘버링 디자인 */
+.ticketjavaBlueTicket {
+	margin:50px 0px 0px 0px;
+	overflow:hidden;
+    	
+}
+
+.ticketbox {
+	border: 10px solid black;
+	margin: 0px 30px 0px 30px;
+}
+
+.ticketBorderMid {
+	background-color:#F9BD4B; height:400px;
+	margin:0px 0px 0px 0px; 
+}
+
+.ticketBorderMid div {
+	height:400px;
+}
+
+
+
+
+/* 티켓자바 귓속말 서비스 소개 */
+.ticketjavaWhisper {
+	margin: 80px 0px 200px 0px;
+}
+
+.whisperText h2 {
+	margin:70px 0px 5px 0px;
+	padding:10px 0px 0px 0px;
+	font-size:45px;
+	font-family: 'Nanum Pen Script', sans-serif;
+}
+
+.whisperText h3 {
+	margin:70px 0px 10px 0px;
+	padding:20px 0px 0px 0px;
+	font-size:40px;
+	font-family: 'Nanum Pen Script', sans-serif;
+}
+
+.whisperText p {
+	font-size:20px;
+	padding:10px 0px 10px 0px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+
+/* 파란배경 그라데이션 구역 노트북 디자인 */
+.ticketIntroducebox {
+	margin:0px 0px 0px 0px;
+}
+
+/* 파란 배경 컨텐츠 배경 제어 */
+.blueGradationAreaMid {
+	background-color:#b2c7d9;
+	height: 500px;
+	width: 100%;
+}
+
+
+
+

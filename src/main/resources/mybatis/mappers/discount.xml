@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="discount">
+
+	<!-- 공연 수정 상시할인 가져오기 -->
+	<select id="bmgetDis" parameterType="int" resultType="DiscountVo">
+		<![CDATA[
+			select  	d.dc_no 	dcNo,
+				     p.prod_no	prodNo,
+				     d.dcname	dcName,
+				     d.dcrate	dcName,
+				     d.dctype	dcType
+			from 	discount d, product p
+			where 	p.prod_no = d.prod_no
+			        	and p.prod_no = #{prodNo}
+
+		]]>
+	</select>
+
+	<select id="selectList" parameterType="map" resultType="DiscountVo">
+		<![CDATA[
+			select dc_no dcNo,
+				   dcname dcName,
+				   to_char(begindc, 'yyyy-mm-dd') beginDc,
+				   to_char(enddc, 'yyyy-mm-dd') endDc,
+				   dcrate dcRate,
+				   dctype dcType
+			from discount
+			where prod_no = #{prodNo} and
+			(beginDc is null  or ( to_date(#{viewDate}) >= beginDc and to_date(#{viewDate}) <= endDc))
+			order by begindc desc ,dctype, dcrate
+		]]>
+	</select>
+
+
+	<!-- 특정공연 이벤트할인 등록창 -->
+	<select id="selectProdDiscount" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select			prodname, 
+							hallname, 
+							dcname,
+							d.dc_no dcNo, 
+							d.prod_no prodNo, 
+							begindc, 
+							enddc, 
+							dcrate, 
+							dctype
+			from 			product p, hall h, discount d
+			where 			p.hall_no= h.hall_no
+			and 			p.prod_no= d.prod_no
+			and 			d.prod_no= #{prodNo}
+		]]>
+	</select>
+
+	<!-- 특정공연 이름&공연장 불러오기 -->
+	<select id="selectProdHall" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select distinct prodname, hallname
+			from 			product p, hall h, discount d
+			where 			p.hall_no= h.hall_no
+			and 			p.prod_no= d.prod_no
+			and 			d.prod_no= #{prodNo}
+		]]>
+	</select>
+
+	<!-- 상시할인 추가 -->
+	<insert id="alwaysDis" parameterType="ProductVo">
+		<![CDATA[
+		insert into discount 	(dc_no,
+                                	prod_no,
+                                	dcName,
+                                	dcType,
+                                	dcRate
+							)
+								
+				values 		(seq_dc_no.nextval,
+                            		#{prodNo},
+                            		#{dcName},
+                            		#{dcType},
+                            		#{dcRate}
+							)         
+		]]>
+	</insert>
+
+
+	<!-- 이벤트할인 리스트 불러오기 (상시할인 제외) -->
+	<select id="getList" parameterType="int" resultType="DiscountVo">
+		<![CDATA[
+			select			dc_no dcNo,
+        					prod_no prodNo,
+        					dcname,
+        					to_char(begindc, 'YYYY"년"MM"월"DD"일"') beginDc,
+        					to_char(enddc, 'YYYY"년"MM"월"DD"일"') endDc,
+        					dcrate,
+        					dctype
+			from 			discount
+			where 			begindc is not null
+			and 			enddc is not null
+			and				prod_no= #{prodNo}
+		]]>
+	</select>
+
+
+	<!-- 이벤트할인 추가 -->
+	<insert id="addDis" parameterType="DiscountVo">
+		<selectKey keyProperty="dcNo" resultType="int" order="BEFORE">
+			select seq_dc_no.nextval from dual
+		</selectKey>
+		
+		<![CDATA[
+			insert into	 discount
+			values		 (#{dcNo}, 
+						  #{prodNo}, 
+						  #{dcName}, 
+						  #{beginDc}, 
+						  (to_date(#{endDc})+1)-(1/(24*60*60)),
+						  #{dcRate}, 
+						  #{dcType})
+		]]>
+	</insert>
+
+
+	<select id="getDis" parameterType="DiscountVo" resultType="DiscountVo">
+		<![CDATA[
+			select			dc_no dcNo,
+     						prod_no prodNo,
+     						dcname,
+     						to_char(begindc, 'YYYY"년"MM"월"DD"일"') beginDc,
+     						to_char(enddc, 'YYYY"년"MM"월"DD"일"') endDc,
+     						dcrate,
+     						dctype
+			from 			discount
+			where 			dc_no= #{dcNo}
+		]]>
+	</select>
+
+
+	<delete id="delDis" parameterType="DiscountVo">
+		<![CDATA[
+			delete from discount
+			where 		dc_no= #{dcNo}
+		]]>
+	</delete>
+	
+	<!-- 상품상세정보 페이지- 할인정보 가져오기  -->
+	<select id="disbyprod" parameterType="int" resultType="DiscountVo">
+		<![CDATA[
+			select			dc_no dcNo,
+				            d.prod_no prodNo,
+				            dcname,
+				            begindc,
+				            enddc,
+				            dcrate,
+				            dctype
+			from        	product p, discount d
+			where       	p.prod_no= d.prod_no
+			and         	dctype= 0
+			and         	begindc is null
+			and         	p.prod_no= #{prodNo}
+			order by    	dcrate asc
+		]]>
+	</select>
+
+</mapper>

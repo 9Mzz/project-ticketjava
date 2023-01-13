@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+#side {  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.3fr 0.4fr 0.5fr  0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "section"
+    "count"
+    "myReq"
+    "button";
+  grid-area: side;
+}
+
+#section { grid-area: section; }
+#count { grid-area: count; }
+#myReq { grid-area: myReq; }
+#button { grid-area: button; }
+
+#containerBody #menubar ul li{
+	width:100%;
+}
+
+#containerBody #side{
+	margin:10px 10px 0px 0px;
+}
+
+#containerBody #side p{
+	padding-left:10px;
+}
+
+#containerBody #tabOption li{
+	width:50%;
+}
+
+#containerBody #tabOption button{
+	padding:5px 0px;
+	border-width:1px;
+	border-style:solid;
+	width:100%;
+}
+
+
+#containerBody #section{
+	margin-top:10px;
+	
+}
+#containerBody #section #sectionBtn{
+	height:275px;
+	overflow:auto;
+	text-align:center;
+}
+
+#containerBody #section label.btn{
+	background-color:#eee;
+	border: 1px solid white;
+	width:95%;
+	height:40px;
+	margin:10px 0px 5px 0px;
+	color:#aaa;
+	font-size:15px;
+}
+
+#containerBody #section label.btn:disabled{
+}
+
+#containerBody #section label.active{
+  color: white;
+  background-color: #6697f2;
+}
+
+
+#containerBody #side select{
+	width:95%;
+	margin:5px 0px 5px 0px;
+}
+
+
+
+#containerBody #side #myReq{
+	border-top:1px solid #ccc;
+	padding-top:20px;
+}
+
+
+#containerBody #button{
+	margin:5px;
+}
+
+#containerBody #button button{
+	width:100%;
+	height:50px;
+}
+

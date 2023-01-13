@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="detail">
+
+	<!-- detail 폼에서 공연번호 가져오기 -->
+	<select id="bmgetDetail" parameterType="int" resultType="DetailVo">
+
+		<![CDATA[
+			select 	d.detail_no detailNo,
+					d.prod_no prodNo,
+					d.prodpath prodPath,
+					d.castingpath castingPath,
+					d.addedpath addedPath
+			from 	detail d, product p
+			where 	d.prod_no = p.prod_no
+			and 		p.prod_no = #{prodNo}
+		]]>
+
+	</select>
+
+
+	<select id="getDetail" parameterType="DetailVo" resultType="DetailVo">
+		<![CDATA[
+			select			detail_no detailNo, 
+							prod_no prodNo, 
+							prodpath, 
+							castingpath, 
+							addedpath
+			from 			detail
+			where 			prod_no= #{prodNo}
+		]]>
+	</select>
+
+	<!-- 공연 번호 추가 -->
+	<insert id="detailNoAdd" parameterType="DetailVo">
+		<selectKey keyProperty="detailNo" resultType="int" order="BEFORE">
+			select seq_detail_no.nextval from dual
+		</selectKey> 
+		<![CDATA[
+			insert into detail 	(detail_no,
+							prod_no
+							)	
+								
+					values 	(#{detailNo},
+							#{prodNo}
+							)
+		]]>
+	</insert>
+
+	<!-- 공연 이미지파일 업데이트 <<<<< 공연 정보 -->
+	<update id="prodAdd" parameterType="DetailVo">
+		<![CDATA[
+			update 	detail
+			set 		prodpath = #{prodPath}
+			where 	detail_no = #{detailNo}
+		]]>
+	</update>
+
+	<!-- 공연 이미지파일 업데이트 <<<<< 캐스팅 정보 -->
+	<update id="castingAdd" parameterType="DetailVo">
+		<![CDATA[
+			update 	detail
+			set 		castingpath = #{castingPath}
+			where 	detail_no = #{detailNo}
+		]]>
+	</update>
+
+	<!-- 공연 이미지파일 추가 <<<<< 부가 정보 -->
+	<update id="addedAdd" parameterType="DetailVo">
+		<![CDATA[
+			update 	detail
+			set 		addedpath = #{addedPath}
+			where 	detail_no = #{detailNo}
+		]]>
+	</update>
+
+	<!--수정 -->
+
+
+
+</mapper>

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+#draggable{
+	left:-19px;
+	top:-15px;
+}
+
+#seatPlan{
+	width:110%;
+	height:550px;
+}
+
+#seatPlanDiv{
+	width:85%;
+	height:500px;
+}
+
+#seatPlanDiv div#stageArea{
+	text-align:center;
+	width:40%;
+	height:30px;
+	color:white;
+	background-color:#474747;
+	border-radius:20px;
+	margin: 10px 0px 40px 170px;
+	font-size:17px;
+}
+
+#seatPlanDiv table#seatAreaA{
+	position:absolute;
+	top:100px;
+	left:130px;
+}
+
+#seatPlanDiv table#seatAreaB{
+	position:absolute;
+	top:100px;
+	left:270px;
+}
+
+#seatPlanDiv table#seatAreaC{
+	position:absolute;
+	top:100px;
+	left:430px;
+}
+
+#seatPlanDiv table#seatAreaD{
+	position:absolute;
+	top:260px;
+	left:50px;
+}
+
+#seatPlanDiv table#seatAreaE{
+	position:absolute;
+	top:260px;
+	left:240px;
+}
+
+#seatPlanDiv table#seatAreaF{
+	position:absolute;
+	top:260px;
+	left:470px;
+}
+
+
+#seatPlanDiv table#seatAreaG{
+	position:absolute;
+	top:350px;
+	left:50px;
+}
+
+#seatPlanDiv table#seatAreaH{
+	position:absolute;
+	top:350px;
+	left:240px;
+}
+
+#seatPlanDiv table#seatAreaI{
+	position:absolute;
+	top:350px;
+	left:470px;
+}
+
+#seatPlanDiv table#seatAreaJ{
+	position:absolute;
+	top:440px;
+	left:50px;
+}
+
+#seatPlanDiv table#seatAreaK{
+	position:absolute;
+	top:440px;
+	left:240px;
+}
+
+#seatPlanDiv table#seatAreaL{
+	position:absolute;
+	top:440px;
+	left:470px;
+}

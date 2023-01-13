@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hall">
+
+	<!-- 사업자 페이지 (민석) -->
+	<!-- 공연장 리스트 -->
+	<select id="bmhallList" parameterType="HallVo" resultType="HallVo">
+		<![CDATA[        		
+        		select 	h.hall_no 	hallNo,
+       				t.theater_no 	theaterNo,
+        				h.hallname 	hallName,
+        				t.theatername 	theaterName
+			from 	hall h, theater t
+			where 	h.theater_no = t.theater_no
+			order by 	h.hall_no asc
+			
+		]]>
+	</select>
+
+	<!-- 공연장 리스트 검색 -->
+	<select id="bmhallListResult" parameterType="String" resultType="HallVo">
+		<![CDATA[
+			select  t.theatername   		theaterName,
+				        h.hallname      	hallName,
+				        t.address       	address
+        
+			from 	theater t, hall h
+			where 	t.theater_no = h.theater_no
+					and t.theatername like '%'#{hKey}'%'
+		
+		]]>
+	</select>
+
+
+
+
+	<!-- 관리자 페이지 (호준) -->
+
+
+	<insert id="hallAdd" parameterType="TheaterVo">
+		<![CDATA[
+			insert into hall
+			values (seq_hall_no.nextval, #{theaterNo}, #{hallName})
+		]]>
+	</insert>
+
+
+
+	<select id="getHallList" resultType="HallVo">
+		<![CDATA[
+			select			t.theater_no theaterNo, 
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage, 
+							logopath, 
+							hallname, 
+							hall_no hallNo
+			from 			theater t, hall h
+			where 			t.theater_no= h.theater_no
+			order by 		theaterNo desc, hall_no desc
+		]]>
+	</select>
+
+
+	<select id="getHall" parameterType="HallVo" resultType="HallVo">
+		<![CDATA[
+			select			t.theater_no theaterNo, 
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage, 
+							logopath, 
+							hallname, 
+							hall_no hallNo
+			from			theater t, hall h
+			where 			t.theater_no= h.theater_no
+			and 			hall_no= #{hallNo}	
+		]]>
+	</select>
+
+
+	<!-- 상품번호로 공연장 정보 불러오기 -->
+	<select id="getHallbyprodNo" parameterType="int" resultType="HallVo">
+		<![CDATA[
+			select			t.theater_no theaterNo, 
+							theatername, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage, 
+							logopath, 
+							hallname, 
+							h.hall_no hallNo
+			from			theater t, hall h, product p
+			where 			t.theater_no= h.theater_no
+			and 		    h.hall_no= p.hall_no
+            and             p.prod_no= #{prodNo}
+		]]>
+	</select>
+
+
+	<update id="update" parameterType="HallVo">
+		<![CDATA[
+			update			hall
+			set 			hallname= #{hallName}
+			where 			hall_no= #{hallNo}
+		]]>
+	</update>
+
+
+	<delete id="delete" parameterType="HallVo">
+		<![CDATA[
+			delete from hall
+			where 		hall_no= #{hallNo}
+		]]>
+	</delete>
+
+
+	<select id="totalCnt" resultType="int">
+		<![CDATA[
+			select  count(*)
+			from    hall h, theater t
+			where   t.theater_no= h.theater_no
+		]]>
+	</select>
+
+	<select id="resultCnt" parameterType="String" resultType="int">
+		<![CDATA[
+			select  count(*)
+			from    hall h, theater t
+			where   t.theater_no= h.theater_no
+            and     theatername like '%'||#{key}||'%'
+		]]>
+	</select>
+
+
+	<!-- 페이징 -->
+	<select id="pagingList" parameterType="map" resultType="HallVo">
+		<![CDATA[
+			select			rn, 
+							theatername, 
+							hallname,
+							hall_no hallNo, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage
+			from			(select 		rownum rn,
+									        theatername,
+									        hallname,
+									        hall_no,
+									        postcode,
+									        address,
+									        address2,
+									        phone,
+									        homepage
+							from 			(select  	theatername,
+														hallname,
+														hall_no, 
+														postcode, 
+														address, 
+														address2, 
+														phone, 
+														homepage
+											from    	hall h, theater t
+											where   	t.theater_no= h.theater_no
+											order by 	t.theater_no desc) o) r
+			where rn between #{startRnum} and #{endRnum}
+		]]>
+	</select>
+
+
+	<!-- 검색결과 페이징 -->
+	<select id="searchResult" parameterType="map" resultType="HallVo">
+		<![CDATA[
+			select			rn, 
+							theatername, 
+							hallname, 
+							postcode, 
+							address, 
+							address2, 
+							phone, 
+							homepage
+			from			(select 		rownum rn,
+									        theatername,
+									        hallname,
+									        postcode,
+									        address,
+									        address2,
+									        phone,
+									        homepage
+							from 			(select  	theatername,
+														hallname, 
+														postcode, 
+														address, 
+														address2, 
+														phone, 
+														homepage
+											from    	hall h, theater t
+											where   	t.theater_no= h.theater_no
+											and	  		theatername like '%'||#{key}||'%'
+											order by 	t.theater_no desc) o) r
+			where rn between #{startRnum} and #{endRnum}
+		]]>
+	</select>
+
+</mapper>
